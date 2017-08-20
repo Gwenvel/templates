@@ -1,0 +1,12 @@
+{ 
+    "author": "Jason Tennant",
+    "classifications": [ "Web" ],
+    "name": "Web Starter App",
+    "identity": "Starter",
+    "shortName": "starter",
+    "tags": {
+        "language": "C#"
+    },
+    "sourceName": "Starter",
+    "preferNameDirectory": "true"
+}
