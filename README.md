@@ -1,7 +1,10 @@
 # Install Notes
 
-You will need to have the git client installed on your computer to run the
-following steps.  
+## Required Software
+
+- [git client](https://git-scm.com/download/gui/windows)
+- [.NET Core 2.0 SDK](https://www.microsoft.com/net/download/core)
+- [VSCode](https://code.visualstudio.com/download)
  
 Run the following on the command line to create a *src* folder on your C drive.  
 
