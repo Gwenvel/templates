@@ -15,7 +15,7 @@ Run the following on the command line to clone this repo to the C:\src folder.
 
 ````
 
-git clone https://github.com/... C:\src
+git clone https://github.com/hakkoda/templates.git C:\src
 
 ````
 
