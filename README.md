@@ -2,7 +2,7 @@
 
 ## Required Software
 
-- [git client](https://git-scm.com/download/gui/windows)
+- [git client](https://git-scm.com/downloads)
 - [.NET Core 2.0 SDK](https://www.microsoft.com/net/download/core)
 - [VSCode](https://code.visualstudio.com/download)
  
