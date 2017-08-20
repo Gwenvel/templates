@@ -1,0 +1,12 @@
+{ 
+    "author": "Jason Tennant",
+    "classifications": [ "Web" ],
+    "name": "Web Training App",
+    "identity": "Training",
+    "shortName": "training",
+    "tags": {
+        "language": "C#"
+    },
+    "sourceName": "Training",
+    "preferNameDirectory": "true"
+}
