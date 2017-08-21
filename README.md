@@ -3,6 +3,7 @@
 ## Required Software
 
 - [git client](https://git-scm.com/downloads)
+- [Node.js](https://nodejs.org/en/download/)
 - [.NET Core 2.0 SDK](https://www.microsoft.com/net/download/core)
 - [VSCode](https://code.visualstudio.com/download)
  
