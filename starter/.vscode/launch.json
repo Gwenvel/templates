@@ -26,7 +26,7 @@
                     "command": "open"
                 },
                 "linux": {
-                    "command": "xdg-open"
+                    "command": "google-chrome -incognito ${auto-detect-url}"
                 }
             },
             "env": {
