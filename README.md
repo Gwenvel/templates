@@ -83,3 +83,7 @@ dotnet new starter
 dotnet run
 
 ````
+
+## Afer the Install
+
+[overview of the templates](https://youtu.be/YEExi7SR9tA)
