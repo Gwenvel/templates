@@ -11,6 +11,8 @@ using Microsoft.Extensions.Options;
 using Starter.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Rewrite;
+using System.Net;
 
 namespace Starter
 {
@@ -49,6 +51,9 @@ namespace Starter
                     context.Database.Migrate();
                 }
             }
+                    
+            app.UseRewriter(new RewriteOptions()
+                .AddIISUrlRewrite(env.ContentRootFileProvider, "web.config"));
 
             app.UseDefaultFiles();
             app.UseStaticFiles();

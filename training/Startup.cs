@@ -10,6 +10,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
 using Training.Data;
+using Microsoft.AspNetCore.Rewrite;
+using System.Net;
 
 namespace Training
 {
@@ -44,6 +46,9 @@ namespace Training
                     DbInitializer.Initialize(context);
                 }
             }
+                    
+            app.UseRewriter(new RewriteOptions()
+                .AddIISUrlRewrite(env.ContentRootFileProvider, "web.config"));
 
             app.UseDefaultFiles();
             app.UseStaticFiles();
