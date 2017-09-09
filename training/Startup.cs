@@ -28,7 +28,7 @@ namespace Training
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<DiagonAlleyContext>(options =>
+            services.AddDbContext<TrainingContext>(options =>
                 options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
             
             services.AddMvc();
@@ -48,7 +48,7 @@ namespace Training
                 app.UseDeveloperExceptionPage();
 
                 // Perform automatic migration
-                using (var context = provider.GetRequiredService<DiagonAlleyContext>())
+                using (var context = provider.GetRequiredService<TrainingContext>())
                 {
                     context.Database.Migrate();
                     DbInitializer.Initialize(context);

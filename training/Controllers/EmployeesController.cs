@@ -10,57 +10,57 @@ using Training.Data;
 namespace Training.Controllers
 {
     [Produces("application/json")]
-    [Route("api/Products")]
-    public class ProductsController : Controller
+    [Route("api/Employees")]
+    public class EmployeesController : Controller
     {
-        private readonly DiagonAlleyContext _context;
+        private readonly TrainingContext _context;
 
-        public ProductsController(DiagonAlleyContext context)
+        public EmployeesController(TrainingContext context)
         {
             _context = context;
         }
 
-        // GET: api/Products
+        // GET: api/Employees
         [HttpGet]
-        public IEnumerable<Product> GetProduct()
+        public IEnumerable<Employee> GetEmployee()
         {
-            return _context.Product;
+            return _context.Employee;
         }
 
-        // GET: api/Products/5
+        // GET: api/Employees/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetProduct([FromRoute] int id)
+        public async Task<IActionResult> GetEmployee([FromRoute] int id)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var product = await _context.Product.SingleOrDefaultAsync(m => m.ProductId == id);
+            var employee = await _context.Employee.SingleOrDefaultAsync(m => m.EmployeeId == id);
 
-            if (product == null)
+            if (employee == null)
             {
                 return NotFound();
             }
 
-            return Ok(product);
+            return Ok(employee);
         }
 
-        // PUT: api/Products/5
+        // PUT: api/Employees/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProduct([FromRoute] int id, [FromBody] Product product)
+        public async Task<IActionResult> PutEmployee([FromRoute] int id, [FromBody] Employee employee)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != product.ProductId)
+            if (id != employee.EmployeeId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(product).State = EntityState.Modified;
+            _context.Entry(employee).State = EntityState.Modified;
 
             try
             {
@@ -68,7 +68,7 @@ namespace Training.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ProductExists(id))
+                if (!EmployeeExists(id))
                 {
                     return NotFound();
                 }
@@ -81,45 +81,45 @@ namespace Training.Controllers
             return NoContent();
         }
 
-        // POST: api/Products
+        // POST: api/Employees
         [HttpPost]
-        public async Task<IActionResult> PostProduct([FromBody] Product product)
+        public async Task<IActionResult> PostEmployee([FromBody] Employee employee)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            _context.Product.Add(product);
+            _context.Employee.Add(employee);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetProduct", new { id = product.ProductId }, product);
+            return CreatedAtAction("GetEmployee", new { id = employee.EmployeeId }, employee);
         }
 
-        // DELETE: api/Products/5
+        // DELETE: api/Employees/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteProduct([FromRoute] int id)
+        public async Task<IActionResult> DeleteEmployee([FromRoute] int id)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var product = await _context.Product.SingleOrDefaultAsync(m => m.ProductId == id);
-            if (product == null)
+            var employee = await _context.Employee.SingleOrDefaultAsync(m => m.EmployeeId == id);
+            if (employee == null)
             {
                 return NotFound();
             }
 
-            _context.Product.Remove(product);
+            _context.Employee.Remove(employee);
             await _context.SaveChangesAsync();
 
-            return Ok(product);
+            return Ok(employee);
         }
 
-        private bool ProductExists(int id)
+        private bool EmployeeExists(int id)
         {
-            return _context.Product.Any(e => e.ProductId == id);
+            return _context.Employee.Any(e => e.EmployeeId == id);
         }
     }
 }
