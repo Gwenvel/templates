@@ -3,17 +3,20 @@ using System.Collections.Generic;
 
 namespace Training.Data
 {
-    public partial class Customer
+    public partial class Employee
     {
-        public Customer()
+        public Employee()
         {
-            Invoice = new HashSet<Invoice>();
+            Customer = new HashSet<Customer>();
         }
 
-        public int CustomerId { get; set; }
-        public string FirstName { get; set; }
+        public int EmployeeId { get; set; }
         public string LastName { get; set; }
-        public string Company { get; set; }
+        public string FirstName { get; set; }
+        public string Title { get; set; }
+        public int ReportsTo { get; set; }
+        public DateTime BirthDate { get; set; }
+        public DateTime HireDate { get; set; }
         public string Address { get; set; }
         public string City { get; set; }
         public string State { get; set; }
@@ -22,9 +25,7 @@ namespace Training.Data
         public string Phone { get; set; }
         public string Fax { get; set; }
         public string Email { get; set; }
-        public int SupportRepId { get; set; }
 
-        public Employee SupportRep { get; set; }
-        public ICollection<Invoice> Invoice { get; set; }
+        public ICollection<Customer> Customer { get; set; }
     }
 }

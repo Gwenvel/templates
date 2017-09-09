@@ -10,10 +10,9 @@ using Training.Data;
 namespace Training.Data.Migrations
 {
     [DbContext(typeof(TrainingContext))]
-    [Migration("20170908215305_CreateDb")]
-    partial class CreateDb
+    partial class TrainingContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
