@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace Training.Data
 {
@@ -26,6 +27,7 @@ namespace Training.Data
         public string Fax { get; set; }
         public string Email { get; set; }
 
+        [JsonIgnore]
         public ICollection<Customer> Customer { get; set; }
     }
 }

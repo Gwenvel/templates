@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace Training.Data
 {
@@ -14,7 +15,10 @@ namespace Training.Data
         public string Title { get; set; }
         public int ArtistId { get; set; }
 
+        [JsonIgnore]
         public Artist Artist { get; set; }
+
+        [JsonIgnore]
         public ICollection<Track> Track { get; set; }
     }
 }

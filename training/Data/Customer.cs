@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace Training.Data
 {
@@ -24,7 +25,10 @@ namespace Training.Data
         public string Email { get; set; }
         public int SupportRepId { get; set; }
 
+        [JsonIgnore]
         public Employee SupportRep { get; set; }
+
+        [JsonIgnore]
         public ICollection<Invoice> Invoice { get; set; }
     }
 }

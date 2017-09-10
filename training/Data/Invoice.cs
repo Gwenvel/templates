@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace Training.Data
 {
@@ -20,7 +21,10 @@ namespace Training.Data
         public string BillingPostalCode { get; set; }
         public decimal Total { get; set; }
 
+        [JsonIgnore]
         public Customer Customer { get; set; }
+
+        [JsonIgnore]
         public ICollection<InvoiceItem> InvoiceItem { get; set; }
     }
 }

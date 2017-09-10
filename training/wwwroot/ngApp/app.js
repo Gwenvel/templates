@@ -1,6 +1,6 @@
 var myApp = angular.module("myApp", [ "ui.router", "ngResource" ]);
 myApp.controller("MainController", MainController);
-myApp.service("$productService", ProductService);
+myApp.service("$employeeService", EmployeeService);
 
 myApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider

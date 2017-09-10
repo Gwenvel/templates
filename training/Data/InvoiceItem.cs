@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace Training.Data
 {
@@ -11,7 +12,10 @@ namespace Training.Data
         public decimal UnitPrice { get; set; }
         public int Quantity { get; set; }
 
+        [JsonIgnore]
         public Invoice Invoice { get; set; }
+
+        [JsonIgnore]
         public Track Track { get; set; }
     }
 }
