@@ -79,10 +79,16 @@ Test out the templates by running the following:
 
 mkdir ~/src/Hello
 cd ~/src/Hello
-dotnet new starter
+dotnet new training
 dotnet run
 
 ````
+
+You should be able to go to http://localhost:5000 in your browser and see the
+training website.
+
+Browsing to http://localhost:5000/swagger will show some api documentation for
+the training website.
 
 ## Afer the Install
 
